@@ -1,0 +1,6 @@
+{
+  "name": "Lucky RNG",
+  "description": "An immersive neon RNG rolling game with custom biomes, active egg hunts, item condensation storage hacks, quests, and negative star aura visual shifts.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

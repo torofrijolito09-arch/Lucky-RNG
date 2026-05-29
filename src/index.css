@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@450;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Space Grotesk", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  body {
+    background-color: #050505;
+    color: #f3f4f6;
+    overflow-x: hidden;
+  }
+}
+
+/* Custom CSS animations for auras and glows */
+@keyframes nebulaGlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-nebula {
+  background-size: 200% 200%;
+  animation: nebulaGlow 15s ease infinite;
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 18s linear infinite;
+}
+
+.glow-btn:hover {
+  text-shadow: 0 0 8px currentColor;
+  box-shadow: 0 0 15px currentColor;
+}
+
+/* Custom dense list visual scrollbar style */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 9px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(168, 85, 247, 0.25);
+  border-radius: 9px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(168, 85, 247, 0.45);
+}
+
+/* Biome Overlays Keyframes */
+@keyframes rain-fall {
+  0% {
+    transform: translateY(-50px) rotate(15deg);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(110vh) rotate(15deg);
+    opacity: 0.1;
+  }
+}
+
+@keyframes wind-whoosh {
+  0% {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.35;
+  }
+  90% {
+    opacity: 0.35;
+  }
+  100% {
+    transform: translateX(115vw);
+    opacity: 0;
+  }
+}
+
+@keyframes fire-flicker {
+  0% {
+    transform: scaleX(0.9) scaleY(0.9) rotate(-3deg);
+    opacity: 0.75;
+  }
+  50% {
+    transform: scaleX(1.15) scaleY(1.15) rotate(4deg);
+    opacity: 0.95;
+    filter: brightness(1.2);
+  }
+  100% {
+    transform: scaleX(0.95) scaleY(1.0) rotate(-4deg);
+    opacity: 0.8;
+  }
+}
+
+@keyframes scanline {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 100%;
+  }
+}
+
+@keyframes glitch-flash {
+  0%, 93%, 98% {
+    opacity: 0;
+    transform: skewX(0deg);
+  }
+  95% {
+    opacity: 0.15;
+    transform: skewX(2deg);
+  }
+  97% {
+    opacity: 0.22;
+    transform: skewX(-2deg);
+  }
+}
+
+.animate-scanline {
+  animation: scanline 2.5s linear infinite;
+}
+
+.animate-glitch-flash {
+  animation: glitch-flash 4.5s ease-in-out infinite;
+}
+
